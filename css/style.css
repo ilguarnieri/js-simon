@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: min(45px, 8vw);
+}
+
+body{
+    background-color: #2A4F6E;
+}
+
+.header-title h1{
+    font-family: 'Shizuru', cursive, sans-serif;
+    color: #ddd;
+    font-size: min(80px, 15vw);
+    padding-top: 100px;
+}
+
+.header-title img{
+    max-width: 200px;
+    z-index: 1;    
+}
+
+.game-wrapper{
+    background-color: #FFDBAB;
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.3);
+}
