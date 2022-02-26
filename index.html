@@ -26,7 +26,13 @@
 
         <!-- games wrapper -->
         <div class="game-wrapper pt-2 text-center d-flex flex-column justify-content-between position-relative">
-            <p class="div_title m-0"></p>
+            <div class="div_title m-0">Ciao, io sono BoolBrain!
+                <div class="subtitle mt-2">
+                    Testiamo la potenza del tuo <i class="fas fa-brain"></i>
+                    <br>Ti mostrerò 5 numeri per 15 sec, tienili bene a mente!
+                    <br>Sei pronto?
+                </div>
+            </div>
 
             <div class="game_start flex-grow-1 d-flex align-items-center justify-content-center">
                 <!-- stampa numeri random -->
@@ -46,13 +52,17 @@
                 <i class="icon fas fa-circle-notch"></i>
                 <p class="time_memory position-absolute"></p>                
             </div>
+
+            <div class="btn-wrapper position-absolute mb-1">
+                <button class="cta_restart btn_style d-none rounded-pill">Restart</button>
+                <button class="cta_start btn_style rounded-pill">Start</button>
+                <button class="cta_send d-none btn_style rounded-pill">Verifica</button>
+            </div>
+
+            
+
         </div>
     </section>
-
-
-    <button class="cta_restart">Restart</button>
-    <button class="cta_btn">Start</button>
-
     <script src="js/app.js"></script>    
 </body>
 </html>

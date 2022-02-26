@@ -41,6 +41,10 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.3);
 }
 
+.game-wrapper .subtitle{
+    font-size: 30px;
+}
+
 .time_memory{
     font-size: min(28px, 10vw);
     top: 50%;
@@ -86,5 +90,61 @@ input[type=number]::-webkit-outer-spin-button {
     }
     100% {
         left: 5%;
+    }
+}
+
+.btn-wrapper{
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);    
+}
+
+.btn_style{
+    background-color: #AA72A8;
+    color: white;
+    font-size: 30px;
+    font-family: 'Shizuru', cursive, sans-serif;
+    border: none;
+    padding: 0 20px 8px;
+    transition: all 250ms ease-in-out;
+}
+
+.cta_start{    
+    animation: scale_move 1s infinite linear;
+}
+
+.cta_send{
+    background-color: #BBCD67;
+    color: black;
+}
+
+.cta_start:hover{
+    background-color: #BBCD67;
+    color: black;
+}
+
+.cta_restart:hover{
+    background-color: white;
+    color: black;
+    outline: 3px solid #AA72A8;;
+    outline-offset: 3px;
+}
+
+.cta_send:hover{
+    background-color: white;
+    color: black;
+    outline: 3px solid #BBCD67;;
+    outline-offset: 3px;
+}
+
+@keyframes scale_move{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
     }
 }

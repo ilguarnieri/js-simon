@@ -7,21 +7,25 @@ const mind_wait = document.querySelector('.mind_wait');
 
 
 //15
-const timeWait = 5;
+const timeWait = 1;
 //30
-const timeInput = 8;
+const timeInput = 2;
 
 
 
 
 
 //btn start
-const cta_btn = document.querySelector('.cta_btn');
-cta_btn.addEventListener('click', start);
+const cta_start = document.querySelector('.cta_start');
+cta_start.addEventListener('click', start);
 
 //btn restart
 const cta_restart = document.querySelector('.cta_restart');
 cta_restart.addEventListener('click', restart);
+
+//btn send
+const cta_send = document.querySelector('.cta_send');
+
 
 
 
@@ -47,6 +51,10 @@ function start(){
     div_title.innerHTML = `Memorizza i seguenti numeri!`;
     time_wrapper.classList.remove('d-none');
 
+    //scambio btn
+    cta_start.classList.add('d-none');
+    cta_restart.classList.remove('d-none');
+
     const numbers = [];
     let i = 0;
 
@@ -70,12 +78,44 @@ function start(){
     //time attesa
     setTimeout(inputUser, (timeWait + timeInput) * 1000);
 
-    //creazione listener invio dati
+    //listener invio dati
+    cta_send.addEventListener('click', sendInput);
+
     //controllo inserimento dati
     //confronto array
 
+    //funzione invio input utente
+    function sendInput(){
+
+        //listener btn
+        const numberInput = document.getElementsByClassName('input_number');
+
+        let j = 0;
+        const numbersUser = [];
+
+        while(j < 5){
+            const inputValue = numberInput[j];
+            if(inputValue.value !== ''){
+                //input valido
+                j++;
+                numbersUser.push(inputValue.value);
+            }else{
+                //input vuoto
+                alert('ATTENZIONE!\nUna o più caselle sono vuote.');
+                return;
+            }
+        }
+
+        //cta send scompare
+        cta_send.classList.add('d-none');
+
+        for(let k = 0; k < numbersUser.length; k++){
+
+            
 
 
+        }
+    }
 }
 
 
@@ -120,9 +160,6 @@ function timeRemember(){
 
     //array nascosto
     game_start.classList.add('d-none');
-    //circle time centrale
-    time_wrapper.classList.remove('align-self-end');
-    time_wrapper.classList.add('align-self-center');
     //comparsa mind
     mind_wait.classList.remove('d-none');
     //cancellazione title
@@ -137,4 +174,5 @@ function inputUser(){
     time_wrapper.classList.add('d-none');
     mind_wait.classList.add('d-none');
     game_input.classList.remove('d-none');
+    cta_send.classList.remove('d-none');
 }
