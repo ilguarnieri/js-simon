@@ -11,6 +11,16 @@ body{
     background-color: #2A4F6E;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.c-red{
+    color: red;
+}
+
 .header-title h1{
     font-family: 'Shizuru', cursive, sans-serif;
     color: #ddd;
@@ -31,8 +41,8 @@ body{
     box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.3);
 }
 
-.time_mem{
-    font-size: 28px;
+.time_memory{
+    font-size: min(28px, 10vw);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -45,10 +55,36 @@ body{
 
 .time-wrapper .icon{
     animation: circle-anim 2s linear infinite;
-    font-size: 70px;
+    font-size:  min(70px, 18vw);
 }
 
 @keyframes circle-anim {
     0% {transform: rotate(0turn);}
     100%{transform: rotate(1turn);}
+}
+
+.game_input >*{
+    max-width: 70px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+}
+
+.mind_wait{
+    max-width: 150px;
+    top: 30%;
+    animation: mind_move 15s linear infinite;
+}
+
+@keyframes mind_move {
+    0% {
+        left: 10%;
+    }
+    50%{
+        left: 77%;
+    }
+    100% {
+        left: 10%;
+    }
 }

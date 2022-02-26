@@ -24,19 +24,33 @@
         </div>
 
         <!-- games wrapper -->
-        <div class="game-wrapper pt-2 text-center d-flex flex-column justify-content-between">
-            <p class="m-0">Memorizza i seguenti numeri!</p>
+        <div class="game-wrapper pt-2 text-center d-flex flex-column justify-content-between position-relative">
+            <p class="div_title m-0"></p>
 
             <div class="game_start flex-grow-1 d-flex align-items-center justify-content-center">
                 <!-- stampa numeri random -->
             </div>
 
-            <div class="time-wrapper position-relative">
+            <img class="mind_wait d-none position-absolute" src="img/mind_relax.png" alt="wait">
+
+            <div class="game_input d-none flex-grow-1 flex-wrap d-flex align-items-center justify-content-center">
+                <input type="number" class="input_number" id="number1" name="number1" minlength="1" maxlength="2">
+                <input type="number" class="input_number" id="number2" name="number2" minlength="1" maxlength="2">
+                <input type="number" class="input_number" id="number3" name="number3" minlength="1" maxlength="2">
+                <input type="number" class="input_number" id="number4" name="number4" minlength="1" maxlength="2">
+                <input type="number" class="input_number" id="number5" name="number5" minlength="1" maxlength="2">        
+            </div>
+
+            <div class="time-wrapper d-none position-relative align-self-end m-1">
                 <i class="icon fas fa-circle-notch"></i>
-                <p class="time_mem position-absolute">52</p>                
+                <p class="time_memory position-absolute"></p>                
             </div>
         </div>
     </section>
+
+
+    <button class="cta_restart">Restart</button>
+    <button class="cta_btn">Start</button>
 
     <script src="js/app.js"></script>    
 </body>
