@@ -1,6 +1,7 @@
 const div_title = document.querySelector('.div_title');
 const time_wrapper = document.querySelector('.time-wrapper');
 const game_start = document.querySelector('.game_start');
+const game_input = document.querySelector('.game_input');
 
 const mind_wait = document.querySelector('.mind_wait');
 
@@ -62,27 +63,17 @@ function start(){
     //stampa numeri
     game_start.innerHTML = numbers.join(' - ');
 
-
-   
-
-
-
     //avvio timer 15 sec
     timeClock(timeWait);
-
+    //time memorizazzione
     setTimeout(timeRemember, timeWait * 1000);
+    //time attesa
+    setTimeout(inputUser, (timeWait + timeInput) * 1000);
 
-    const fafafa = setTimeout(() =>{
-        
-        time_wrapper.classList.add('d-none');
-        mind_wait.classList.add('d-none');
+    //creazione listener invio dati
+    //controllo inserimento dati
+    //confronto array
 
-
-
-
-
-
-    }, (timeWait + timeInput) * 1000);
 
 
 }
@@ -97,9 +88,10 @@ function start(){
 
 
 
-
-
-
+//funzione numeri random
+function getRandom(min,max){
+    return Math.round(Math.random() * (max - min) + min);
+}
 
 
 //funzione time circle
@@ -140,7 +132,9 @@ function timeRemember(){
 }
 
 
-//funzione numeri random
-function getRandom(min,max){
-    return Math.round(Math.random() * (max - min) + min);
+//funzione comparsa input
+function inputUser(){        
+    time_wrapper.classList.add('d-none');
+    mind_wait.classList.add('d-none');
+    game_input.classList.remove('d-none');
 }
