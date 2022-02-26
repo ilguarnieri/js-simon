@@ -8,6 +8,7 @@ const div_title = document.querySelector('.div_title');
 const time_wrapper = document.querySelector('.time-wrapper');
 const game_start = document.querySelector('.game_start');
 const mind_wait = document.querySelector('.mind_wait');
+const div_alert = document.querySelector('.div_alert');
 
 
 //btn start
@@ -31,6 +32,10 @@ function start(){
     //btn restart
     const cta_restart = document.querySelector('.cta_restart');
     cta_restart.addEventListener('click', restart);
+
+    //btn alert
+    const cta_alert = document.querySelector('.cta_alert');
+    cta_alert.addEventListener('click', close_alert);
 
     //cambio titolo div
     div_title.innerHTML = `Memorizza i seguenti numeri!`;
@@ -80,7 +85,7 @@ function start(){
                 numbersUser.push(inputValue);
             }else{
                 //input vuoto
-                
+                div_alert.classList.remove('d-none');    
                 return;
             }
         }
@@ -169,4 +174,10 @@ function inputUser(){
 
     //titolo
     div_title.innerHTML = `Scrivi i numeri che ricordi <i class="far fa-meh-rolling-eyes"></i>`;
+}
+
+
+//funzione chiusura alert
+function close_alert(){
+    div_alert.classList.add('d-none');
 }

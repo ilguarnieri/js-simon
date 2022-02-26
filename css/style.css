@@ -195,11 +195,14 @@ a{
 
 .cta_alert{
     background-color: #2A4F6E;
+    transition: all 250ms ease-in-out;
 }
 
 .cta_alert:hover{
     background-color: #FFDBAB;
     color: black;
+    outline: 3px solid #FFDBAB;
+    outline-offset: 3px;
 }
 
 /*********** FOOTER ***********/
