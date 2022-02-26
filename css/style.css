@@ -23,6 +23,7 @@ a{
     color: currentColor;
 }
 
+/*********** COLORI ***********/
 .c-red{
     color: red;
 }
@@ -35,6 +36,7 @@ a{
     background-color: #BBCD67;
 }
 
+/*********** TITLE ***********/
 .header-title h1{
     font-family: 'Shizuru', cursive, sans-serif;
     color: #ddd;
@@ -47,6 +49,7 @@ a{
     z-index: 1;
 }
 
+/*********** GAME WRAPPER ***********/
 .game-wrapper{
     background-color: #FFDBAB;
     width: 100%;
@@ -60,6 +63,8 @@ a{
     margin-bottom: 0;
 }
 
+
+/*********** TIME ***********/
 .time_memory{
     font-size: min(28px, 10vw);
     top: 50%;
@@ -82,6 +87,7 @@ a{
     100%{transform: rotate(1turn);}
 }
 
+/*********** INPUT USER ***********/
 .game_input >*{
     max-width: 70px;
     text-align: center;
@@ -108,6 +114,8 @@ a{
     }
 }
 
+
+/*********** STYLE BOTTON ***********/
 .btn-wrapper{
     left: 50%;
     bottom: 0;
@@ -164,10 +172,34 @@ a{
     }
 }
 
-@media screen and (max-width: 767px){
-    .game-wrapper{        
-        height: 450px;
-    }
+
+/*********** ALERT ***********/
+.div_alert{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #AA72A8;
+    box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.5);
+    z-index: 999;
+    border-radius: 20px;
+}
+
+.div_alert .attention{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.div_alert .alert_text{
+    font-size: 25px;
+}
+
+.cta_alert{
+    background-color: #2A4F6E;
+}
+
+.cta_alert:hover{
+    background-color: #FFDBAB;
+    color: black;
 }
 
 /*********** FOOTER ***********/
@@ -193,4 +225,10 @@ footer{
 
 .footer-author p{
     font-size: 18px;
+}
+
+@media screen and (max-width: 767px){
+    .game-wrapper{        
+        height: 450px;
+    }
 }

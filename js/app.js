@@ -80,7 +80,7 @@ function start(){
                 numbersUser.push(inputValue);
             }else{
                 //input vuoto
-                alert('ATTENZIONE!\nUna o più caselle sono vuote o hai inserito lo stesso numero!');
+                
                 return;
             }
         }
