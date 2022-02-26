@@ -14,11 +14,11 @@ const timeInput = 8;
 
 
 
-
+//btn start
 const cta_btn = document.querySelector('.cta_btn');
 cta_btn.addEventListener('click', start);
 
-
+//btn restart
 const cta_restart = document.querySelector('.cta_restart');
 cta_restart.addEventListener('click', restart);
 
@@ -26,7 +26,7 @@ cta_restart.addEventListener('click', restart);
 
 
 
-
+//funzione restart
 function restart(){
     window.location.reload()
 }
@@ -40,7 +40,7 @@ function restart(){
 
 
 
-
+//funzione start game
 function start(){
 
     div_title.innerHTML = `Memorizza i seguenti numeri!`;
@@ -104,7 +104,6 @@ function start(){
 
 //funzione time circle
 function timeClock(time){
-
     const time_memory = document.querySelector('.time_memory');
     time_memory.innerHTML = time;
     const clockMemory = setInterval(() => {
@@ -123,27 +122,22 @@ function timeClock(time){
     }, 1000);
 }
 
+
 //funzione time remember
 function timeRemember(){
 
+    //array nascosto
     game_start.classList.add('d-none');
+    //circle time centrale
     time_wrapper.classList.remove('align-self-end');
     time_wrapper.classList.add('align-self-center');
+    //comparsa mind
     mind_wait.classList.remove('d-none');
+    //cancellazione title
     div_title.innerHTML = ``;
     //avvio timer 30 sec
     timeClock(timeInput);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 //funzione numeri random

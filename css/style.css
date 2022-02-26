@@ -79,12 +79,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 @keyframes mind_move {
     0% {
-        left: 10%;
+        left: 5%;
     }
     50%{
-        left: 77%;
+        left: calc(100% - 200px);
     }
     100% {
-        left: 10%;
+        left: 5%;
     }
 }
