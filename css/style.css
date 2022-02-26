@@ -5,6 +5,7 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     font-size: min(45px, 8vw);
+    user-select: none; 
 }
 
 body{
@@ -17,8 +18,21 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
 .c-red{
     color: red;
+}
+
+.red{
+    background-color: #ff5454;
+}
+
+.green{
+    background-color: #BBCD67;
 }
 
 .header-title h1{
@@ -41,8 +55,9 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.3);
 }
 
-.game-wrapper .subtitle{
+.game-wrapper .subtitle p{
     font-size: 30px;
+    margin-bottom: 0;
 }
 
 .time_memory{
@@ -133,7 +148,7 @@ input[type=number]::-webkit-outer-spin-button {
 .cta_send:hover{
     background-color: white;
     color: black;
-    outline: 3px solid #BBCD67;;
+    outline: 3px solid #BBCD67;
     outline-offset: 3px;
 }
 
@@ -147,4 +162,35 @@ input[type=number]::-webkit-outer-spin-button {
     100%{
         transform: scale(1);
     }
+}
+
+@media screen and (max-width: 767px){
+    .game-wrapper{        
+        height: 450px;
+    }
+}
+
+/*********** FOOTER ***********/
+footer{
+    color: white;
+    user-select: none;
+}
+
+.footer-author{
+    font-weight: bold;
+}
+
+.author_name{
+    color: #ff5454;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.author_name:hover{
+    color:  #AA72A8;
+}
+
+.footer-author p{
+    font-size: 18px;
 }
