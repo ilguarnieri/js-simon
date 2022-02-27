@@ -76,8 +76,8 @@ function start(){
         let score = 0;
         const numbersUser = [];
 
+        //fissaggio numeri input in un array
         for(let i = 0; i < 5; i++){
-
             const inputValue = parseInt(numberInput[i].value);
             if(numberInput[i].value !== '' && !numbersUser.includes(inputValue)){
                 //input valido
@@ -92,11 +92,9 @@ function start(){
         //cta send scompare
         cta_send.classList.add('d-none');
 
+        //colorazione celle
         numbersUser.forEach((el, i) => {
-
-            //cella input
             const cellInput = numberInput[i];
-
             if(numbers.includes(el)){
                 //numero esatto
                 score++;
@@ -108,19 +106,19 @@ function start(){
         });   
 
         if(score == 5){
-            /* title vincita */
+            // title vincita
             div_title.innerHTML = `Wow, sei un genio!`;
         }else{
             let q = 0;
             const solution = [];
             const wrongNumbers = [];
-            /* ricerca numeri sbagliati */
+            // ricerca numeri sbagliati
             numbers.forEach(el => {
                 if(!numbersUser.includes(el)){
                     wrongNumbers.push(el);
                 }              
             });
-            /* ricerca numeri indovinati */   
+            // ricerca numeri indovinati
             numbersUser.forEach(el => {
                 if(numbers.includes(el)){
                     solution.push(el);
@@ -130,7 +128,7 @@ function start(){
                 }                
             });
 
-            /* title hai perso */
+            // title hai perso
             div_title.innerHTML = `Hai indovinato ${score} numeri su 5!`;
             game_start.classList.remove('d-none');
             game_start.innerHTML = solution.join(' - ');    
