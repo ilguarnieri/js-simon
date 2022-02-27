@@ -55,7 +55,6 @@ function start(){
             numbers.push(numero);
         }
     }
-
     
     //stampa numeri
     game_start.innerHTML = numbers.join(' - ');
@@ -79,8 +78,8 @@ function start(){
 
         for(let i = 0; i < 5; i++){
 
-            const inputValue = numberInput[i].value;
-            if(inputValue !== '' && !numbersUser.includes(inputValue)){
+            const inputValue = parseInt(numberInput[i].value);
+            if(numberInput[i].value !== '' && !numbersUser.includes(inputValue)){
                 //input valido
                 numbersUser.push(inputValue);
             }else{
@@ -93,14 +92,12 @@ function start(){
         //cta send scompare
         cta_send.classList.add('d-none');
 
-        for(let k = 0; k < numbersUser.length; k++){
+        numbersUser.forEach((el, i) => {
 
             //cella input
-            const cellInput = numberInput[k];
-            //valori array numeri utente
-            const userVerification = parseInt(numbersUser[k]);
+            const cellInput = numberInput[i];
 
-            if(numbers.includes(userVerification)){
+            if(numbers.includes(el)){
                 //numero esatto
                 score++;
                 cellInput.classList.add('green');
@@ -108,12 +105,35 @@ function start(){
                 //numero sbagliato
                 cellInput.classList.add('red');
             }
-        }
+        });   
 
         if(score == 5){
+            /* title vincita */
             div_title.innerHTML = `Wow, sei un genio!`;
         }else{
+            let q = 0;
+            const solution = [];
+            const wrongNumbers = [];
+            /* ricerca numeri sbagliati */
+            numbers.forEach(el => {
+                if(!numbersUser.includes(el)){
+                    wrongNumbers.push(el);
+                }              
+            });
+            /* ricerca numeri indovinati */   
+            numbersUser.forEach(el => {
+                if(numbers.includes(el)){
+                    solution.push(el);
+                }else{
+                    solution.push(wrongNumbers[q]);
+                    q++;
+                }                
+            });
+
+            /* title hai perso */
             div_title.innerHTML = `Hai indovinato ${score} numeri su 5!`;
+            game_start.classList.remove('d-none');
+            game_start.innerHTML = solution.join(' - ');    
         }
     }
 }
