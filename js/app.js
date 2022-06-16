@@ -1,13 +1,13 @@
 //timer memory
-const timeWait = 15;
+const timeWait = 10;
 //timer attesa
-const timeInput = 30;
+const timeInput = 20;
 
 
 const div_title = document.querySelector('.div_title');
 const time_wrapper = document.querySelector('.time-wrapper');
 const game_start = document.querySelector('.game_start');
-const mind_wait = document.querySelector('.mind_wait');
+const mind_wait = document.querySelector('.mind_wrapper');
 const div_alert = document.querySelector('.div_alert');
 
 
@@ -57,6 +57,8 @@ function start(){
     }
     
     //stampa numeri
+    game_start.classList.add('text-red');
+    game_start.classList.remove('d-none');
     game_start.innerHTML = numbers.join(' - ');
 
     //avvio timer 15 sec
@@ -131,6 +133,8 @@ function start(){
             // title hai perso
             div_title.innerHTML = `Hai indovinato ${score} numeri su 5!`;
             game_start.classList.remove('d-none');
+            game_start.classList.remove('text-red');
+            game_start.classList.add('text-blue');
             game_start.innerHTML = solution.join(' - ');    
         }
     }

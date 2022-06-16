@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
-    font-size: min(45px, 8vw);
+    font-size: min(40px, 8vw);
     user-select: none; 
 }
 
@@ -53,8 +53,8 @@ a{
 .game-wrapper{
     background-color: #FFDBAB;
     width: 100%;
-    height: 350px;
     border-radius: 20px;
+    min-height: 370px;
     box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.3);
 }
 
@@ -73,8 +73,9 @@ a{
 }
 
 .time-wrapper{
-    max-width: 70px;
+    /* max-width: 70px;  */
     max-height: 70px;
+    position: relative;
 }
 
 .time-wrapper .icon{
@@ -98,34 +99,35 @@ a{
 
 .mind_wait{
     max-width: 150px;
-    top: 30%;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
     animation: mind_move 15s linear infinite;
 }
 
 @keyframes mind_move {
     0% {
-        left: 5%;
+        left: 0%;
     }
     50%{
-        left: calc(100% - 200px);
+        left: calc(100% - 150px);
     }
     100% {
-        left: 5%;
+        left: 0%;
     }
 }
 
-
-/*********** STYLE BOTTON ***********/
-.btn-wrapper{
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);    
+.mind_wrapper{
+    width: 100%;
+    min-height: 150px;
 }
 
+/*********** STYLE BOTTON ***********/
 .btn_style{
+    max-height: 60px;
     background-color: #AA72A8;
     color: white;
-    font-size: 30px;
+    font-size: min(7vw, 30px);
     font-family: 'Shizuru', cursive, sans-serif;
     border: none;
     padding: 0 20px 8px;
@@ -179,7 +181,7 @@ a{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #AA72A8;
-    box-shadow: 8px 5px 15px 8px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 88px 9999px rgb(0 0 0 / 40%);
     z-index: 999;
     border-radius: 20px;
 }
@@ -199,7 +201,7 @@ a{
 }
 
 .cta_alert:hover{
-    background-color: #FFDBAB;
+    background-color: #FFDBAB; 
     color: black;
     outline: 3px solid #FFDBAB;
     outline-offset: 3px;
@@ -230,8 +232,30 @@ footer{
     font-size: 18px;
 }
 
-@media screen and (max-width: 767px){
-    .game-wrapper{        
-        height: 450px;
+
+.text-red{
+    color: red;
+}
+
+.text-blue{
+    color: #2A4F6E;
+}
+
+
+
+/*********** MEDIA ***********/
+@media (min-width: 768px){
+    .game-wrapper{
+        min-height: 370px;
+    }
+
+    .time-wrapper{
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+    }
+    
+    .mind_wrapper{
+        min-height: 200px;
     }
 }
